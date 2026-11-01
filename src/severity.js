@@ -25,3 +25,19 @@ export function severityCssClass(severity) {
 
     return safeSeverity.toLowerCase()+"-severity";
 }
+
+export function getSeverityFromText(text) {
+    switch(text.toLowerCase()) {
+        case "low":
+            return SEVERITY.LOW;
+
+        case "medium":
+            return SEVERITY.MEDIUM;
+
+        case "high":
+            return SEVERITY.HIGH;
+            
+        default: 
+            return SEVERITY.LOW;
+    }
+}

@@ -2,17 +2,106 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Page Title Here</title>
+        <title>Task Manager</title>
     </head>
 
     <body>
         
         <div id="page-container">
-            <header></header>
-            <main></main>
-            <footer></footer>
+            <header>
+                <h1 id="header-hero">Tasks</h1>
+            </header>
+            <aside>
+                <button type="button" id="aside-all-task-button" class="aside-button aside-selected">
+                    View All Tasks
+                </button>
+                <button type="button" id="aside-uncompleted-task-button" class="aside-button aside-unselected">
+                    View Uncompleted Tasks
+                </button>
+                <button type="button" id="aside-completed-task-button" class="aside-button aside-unselected">
+                    View Completed Tasks
+                </button>
+                <button type="button" id="aside-low-severity-task-button" class="aside-button aside-unselected">
+                    View Low Severity Tasks
+                </button>
+                <button type="button" id="aside-medium-severity-task-button" class="aside-button aside-unselected">
+                    View Medium Severity Tasks
+                </button>
+                <button type="button" id="aside-high-severity-task-button" class="aside-button aside-unselected">
+                    View High Severity Tasks
+                </button>
+            </aside>
+            <main>
+            </main>
+            <footer>
+                <button type="button" id="add-new-task-button" class="footer-button">
+                    Add New Task
+                </button>
+                <button type="button" id="clear-completed-tasks-button" class="footer-button">
+                    Clear Completed Tasks
+                </button>
+            </footer>
         </div>
 
-    </body>
+        <div id="dialogs">
+            <dialog id="edit-dialog" closedby="none">
+                <h2 id="edit-dialog-hero" class="dialog-hero">Edit Task</h2>
+                <form id="edit-form">
+                    <label for="edit-task-name">Name</label>
+                    <input type="text" id="edit-task-name" required>
 
+                    <label for="edit-task-date">Due</label>
+                    <input type="date" id="edit-task-date">
+
+                    <label for="edit-task-severity">Severity</label>
+                    <select name="edit-task-severity" id="edit-task-severity">
+                        <option id="edit-low-option">Low</option>
+                        <option id="edit-medium-option">Medium</option>
+                        <option id="edit-high-option">High</option>
+                    </select>
+
+                    <label for="edit-task-details">Details</label>
+                    <input type="text" name="edit-task-details" id="edit-task-details">
+
+                    <label for="edit-task-done">Done</label>
+                    <input type="checkbox" name="edit-task-done" id="edit-task-done">
+                    
+                    <div id="edit-dialog-controls" class="dialog-controls">
+                        <button type="submit">Submit</button>
+                        <button class="close-dialog" type="button">Cancel</button>
+                    </div>
+                    
+                </form>
+            </dialog>
+            <dialog id="new-dialog" closedby="none">
+                <h2 id="new-dialog-hero" class="dialog-hero">New Task</h2>
+                <form id="new-form">
+                    <label for="new-task-name">Name</label>
+                    <input type="text" id="new-task-name" required>
+
+                    <label for="new-task-date">Due</label>
+                    <input type="date" id="new-task-date">
+
+                    <label for="new-task-severity">Severity</label>
+                    <select name="new-task-severity" id="new-task-severity">
+                        <option id="new-low-option" selected>Low</option>
+                        <option id="new-medium-option">Medium</option>
+                        <option id="new-high-option">High</option>
+                    </select>
+
+                    <label for="new-task-details">Details</label>
+                    <input type="text" name="new-task-details" id="new-task-details">
+
+                    <label for="new-task-done">Done</label>
+                    <input type="checkbox" name="new-task-done" id="new-task-done">
+                    
+                    <div id="new-dialog-controls" class="dialog-controls">
+                        <button type="submit">Submit</button>
+                        <button class="close-dialog" type="button">Cancel</button>
+                    </div>
+                    
+                </form>
+            </dialog>
+        </div>
+    </body>
 </html>

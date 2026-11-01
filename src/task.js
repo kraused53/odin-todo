@@ -1,3 +1,5 @@
+import { severityText } from "./severity";
+
 export class Task {
     constructor(name, dueDate, severity, details, done) {
         this.id = crypto.randomUUID();
@@ -8,7 +10,13 @@ export class Task {
         this.done = done;
     }
 
-    toggleDone = function() {
+    toggleDone() {
         this.done = !this.done;
+    }
+
+    logString() {
+        const toLog = `${this.name}\n\tDue: ${this.dueDate}\n\tSeverity: ${severityText(this.severity)}\n\tDetails: ${this.details}\n\tIs Done: ${this.done}`;
+
+        return toLog;
     }
 }

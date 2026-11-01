@@ -15,7 +15,7 @@ npm install --save-dev webpack-dev-server
 
 Open package.json and update the scripts section:
 ```JSON
-scripts": {
+"scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.prod.js",
     "dev": "webpack serve --open --config webpack.dev.js",
@@ -40,8 +40,8 @@ npm run dev
 
 To deploy to gh-pages:
 ```bash
-npm run build
 git checkout gh-pages && git merge main --no-edit
+npm run build
 git add dist -f && git commit -m "Deployment commit"
 git subtree push --prefix dist origin gh-pages
 git checkout main
